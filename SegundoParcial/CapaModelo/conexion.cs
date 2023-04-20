@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
 
-namespace CapaModelo
+namespace CapaModelo_Alumnod
 {
     class conexion
     {

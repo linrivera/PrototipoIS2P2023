@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaControlador">
+      <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaModelo">
+      <HintPath>..\CapaControlador\bin\Debug\CapaModelo.dll</HintPath>
+    </Reference>
     <Reference Include="NavegadorVista">
       <HintPath>..\..\Codigo\Componentes\Navegador\Vista\bin\Debug\NavegadorVista.dll</HintPath>
     </Reference>
@@ -76,6 +82,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaControlador\CapaControlador_Alumnos.csproj">
+      <Project>{c7715e5d-a7f2-4a9a-a928-20db06042199}</Project>
+      <Name>CapaControlador_Alumnos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaModelo\CapaModelo_Alumnod.csproj">
+      <Project>{a5148a0a-3e21-4ac7-a7e7-ae2f7ffba8cb}</Project>
+      <Name>CapaModelo_Alumnod</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

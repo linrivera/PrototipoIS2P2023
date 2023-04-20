@@ -1,0 +1,9 @@
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\obj\Debug\CapaControlador_Alumnos.csproj.AssemblyReference.cache
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\obj\Debug\CapaControlador_Alumnos.csproj.CoreCompileInputs.cache
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\obj\Debug\CapaControlador.dll
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\obj\Debug\CapaControlador.pdb
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\bin\Debug\CapaControlador.dll
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\bin\Debug\CapaControlador.pdb
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\bin\Debug\CapaModelo.dll
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\bin\Debug\CapaModelo.pdb
+C:\Users\linri\Desktop\Segundo parcial\PrototipoIS2P2023\SegundoParcial\CapaControlador\obj\Debug\CapaControlador_Alumnos.csproj.CopyComplete

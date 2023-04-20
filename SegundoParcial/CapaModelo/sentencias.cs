@@ -5,19 +5,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaModelo
+namespace CapaModelo_Alumnod
 {
-    class sentencias
+    public class Sentencias
     {
-        public class Sentencias
+        conexion con = new conexion();
+        public void ejecutarSentecias(string sql)
         {
-            conexion con = new conexion();
-            public OdbcDataAdapter llenarcomboproducto(string tabla)
+            Console.WriteLine(sql);
+            try
             {
-                string sql = "select  *  from " + tabla + " ;";
-                OdbcDataAdapter datatable = new OdbcDataAdapter(sql, con.Conexion());
-
-                return datatable;
+                OdbcCommand command = new OdbcCommand(sql, con.Conexion());
+                command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("error con la setencias" + sql + "\n" + e);
             }
         }
     }
+}
+

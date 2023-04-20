@@ -30,7 +30,8 @@ namespace CapaVista
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.navegador1 = new NavegadorVista.Navegador();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -47,11 +48,10 @@ namespace CapaVista
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.navegador1 = new NavegadorVista.Navegador();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,16 +66,22 @@ namespace CapaVista
             this.panel1.Size = new System.Drawing.Size(1001, 635);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // navegador1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(443, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alumnos";
+            this.navegador1.BackColor = System.Drawing.Color.White;
+            this.navegador1.Location = new System.Drawing.Point(167, 81);
+            this.navegador1.Name = "navegador1";
+            this.navegador1.Size = new System.Drawing.Size(574, 152);
+            this.navegador1.TabIndex = 6;
+            this.navegador1.Load += new System.EventHandler(this.navegador1_Load);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 449);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(927, 166);
+            this.dataGridView1.TabIndex = 5;
             // 
             // panel3
             // 
@@ -108,6 +114,7 @@ namespace CapaVista
             this.button4.TabIndex = 18;
             this.button4.Text = "Eliminar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -117,6 +124,7 @@ namespace CapaVista
             this.button5.TabIndex = 17;
             this.button5.Text = "Modificar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -126,17 +134,18 @@ namespace CapaVista
             this.button6.TabIndex = 16;
             this.button6.Text = "Agregar";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(555, 70);
+            this.textBox10.Location = new System.Drawing.Point(561, 104);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(183, 20);
             this.textBox10.TabIndex = 13;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(555, 28);
+            this.textBox11.Location = new System.Drawing.Point(561, 62);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(183, 20);
             this.textBox11.TabIndex = 12;
@@ -145,7 +154,7 @@ namespace CapaVista
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(30, 160);
+            this.label10.Location = new System.Drawing.Point(418, 30);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 16);
             this.label10.TabIndex = 11;
@@ -155,7 +164,7 @@ namespace CapaVista
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(413, 71);
+            this.label11.Location = new System.Drawing.Point(419, 105);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 16);
             this.label11.TabIndex = 10;
@@ -165,7 +174,7 @@ namespace CapaVista
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 109);
+            this.label12.Location = new System.Drawing.Point(34, 147);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 16);
             this.label12.TabIndex = 9;
@@ -175,7 +184,7 @@ namespace CapaVista
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(413, 28);
+            this.label13.Location = new System.Drawing.Point(419, 62);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(124, 16);
             this.label13.TabIndex = 8;
@@ -183,38 +192,40 @@ namespace CapaVista
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(175, 151);
+            this.textBox12.Location = new System.Drawing.Point(563, 21);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(181, 20);
             this.textBox12.TabIndex = 7;
+            this.textBox12.Tag = "telefono_alumno";
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(175, 109);
+            this.textBox13.Location = new System.Drawing.Point(179, 147);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(181, 20);
             this.textBox13.TabIndex = 6;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(175, 61);
+            this.textBox14.Location = new System.Drawing.Point(179, 99);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(181, 20);
             this.textBox14.TabIndex = 5;
+            this.textBox14.Tag = "nombre_alumno";
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(175, 21);
+            this.textBox15.Location = new System.Drawing.Point(179, 27);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(181, 20);
             this.textBox15.TabIndex = 4;
-            this.textBox15.Tag = "nombre";
+            this.textBox15.Tag = "carnet_alumno";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(30, 28);
+            this.label14.Location = new System.Drawing.Point(34, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 16);
             this.label14.TabIndex = 3;
@@ -224,28 +235,22 @@ namespace CapaVista
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(27, 62);
+            this.label17.Location = new System.Drawing.Point(31, 100);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(59, 16);
             this.label17.TabIndex = 0;
             this.label17.Text = "Nombre";
             // 
-            // dataGridView1
+            // label1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 449);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(927, 166);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // navegador1
-            // 
-            this.navegador1.BackColor = System.Drawing.Color.White;
-            this.navegador1.Location = new System.Drawing.Point(167, 81);
-            this.navegador1.Name = "navegador1";
-            this.navegador1.Size = new System.Drawing.Size(574, 152);
-            this.navegador1.TabIndex = 6;
-            this.navegador1.Load += new System.EventHandler(this.navegador1_Load);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(443, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 34);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Alumnos";
             // 
             // Alumnos
             // 
@@ -257,9 +262,9 @@ namespace CapaVista
             this.Text = "Alumnos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
