@@ -18,7 +18,19 @@ namespace CapaVista
             InitializeComponent();
         }
 
-        CapaControlador_Alumnos.controlador controlador = new CapaControlador_Alumnos.controlador ();
+        CapaControlador_Alumnos.CpControlador controlador = new CapaControlador_Alumnos.CpControlador();
+
+        void displayDatos()
+        {
+            DataTable data = controlador.MostrarReportes();
+            dataGridView1.DataSource = data;
+            dataGridView1.Columns[0].HeaderText = "Carnet";
+            dataGridView1.Columns[1].HeaderText = "Nombre";
+            dataGridView1.Columns[2].HeaderText = "Direccion";
+            dataGridView1.Columns[3].HeaderText = "Telefono";
+            dataGridView1.Columns[4].HeaderText = "Correo";
+            dataGridView1.Columns[5].HeaderText = "Estatus";
+        }
 
         private void label15_Click(object sender, EventArgs e)
         {

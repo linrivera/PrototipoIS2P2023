@@ -11,8 +11,8 @@ namespace CapaModelo_Alumnod
     {
         public OdbcConnection Conexion()
         {
-            //creacion de la conexion via ODBC
-            OdbcConnection conn = new OdbcConnection("Dsn=sui");
+            
+            OdbcConnection conn = new OdbcConnection("Dsn=siu");
 
             try
             {
