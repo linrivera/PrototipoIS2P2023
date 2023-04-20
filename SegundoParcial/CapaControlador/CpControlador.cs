@@ -9,11 +9,21 @@ using System.Windows;
 using System.Windows.Forms;
 using CapaModelo_Alumnod;
 
+
 namespace CapaControlador_Alumnos
 {
-    public class controlador
+    public class CpControlador
     {
         CapaModelo_Alumnod.Sentencias sn = new CapaModelo_Alumnod.Sentencias();
+
+
+        public DataTable MostrarReportes()
+        {
+            OdbcDataAdapter data = sn.DisplayAlumnos();
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+            return tabla;
+        }
 
         public void ast(TextBox[] textBoxs, string fun)
         {
@@ -52,17 +62,17 @@ namespace CapaControlador_Alumnos
             switch (fun)
             {
                 case "insert":
-                    sql = "insert into usuarios (" + colTemp + ") values(" + valTemp + ");";
+                    sql = "insert into alumnos (" + colTemp + ") values(" + valTemp + ");";
                     sn.ejecutarSentecias(sql);
                     break;
 
                 case "delete":
-                    sql = "DELETE FROM usuarios WHERE id = '" + textBoxs[0].Text + "';";
+                    sql = "DELETE FROM alumnos WHERE id = '" + textBoxs[0].Text + "';";
                     sn.ejecutarSentecias(sql);
                     break;
 
                 case "update":
-                    sql = "UPDATE INTO usuarios SET " + sql + " WHERE id='" + textBoxs[0].Text + "';";
+                    sql = "UPDATE INTO alumnos SET " + sql + " WHERE id='" + textBoxs[0].Text + "';";
                     sn.ejecutarSentecias(sql);
                     break;
             }

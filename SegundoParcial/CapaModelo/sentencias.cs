@@ -10,6 +10,22 @@ namespace CapaModelo_Alumnod
     public class Sentencias
     {
         conexion con = new conexion();
+
+        public OdbcDataAdapter DisplayAlumnos()
+        {
+            string sql = "SELECT * FROM alumnos ;";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter();
+            try
+            {
+                dataTable = new OdbcDataAdapter(sql, con.Conexion());
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString() + " \nNo se pudo consultar la tabla Alumnos");
+            }
+            return dataTable;
+        }
         public void ejecutarSentecias(string sql)
         {
             Console.WriteLine(sql);
