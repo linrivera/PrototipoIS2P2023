@@ -142,6 +142,7 @@ namespace CapaVista
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(183, 20);
             this.textBox10.TabIndex = 13;
+            this.textBox10.Tag = "estatus_alumno";
             // 
             // textBox11
             // 
@@ -149,6 +150,7 @@ namespace CapaVista
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(183, 20);
             this.textBox11.TabIndex = 12;
+            this.textBox11.Tag = "email_alumno";
             // 
             // label10
             // 
@@ -204,6 +206,7 @@ namespace CapaVista
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(181, 20);
             this.textBox13.TabIndex = 6;
+            this.textBox13.Tag = "direccion_alumno";
             // 
             // textBox14
             // 
